@@ -8,6 +8,6 @@ public class CollectItemComponent : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        objectToEnable.SetActive(true);
+        objectToEnable.SetActive(false);
     }
 }

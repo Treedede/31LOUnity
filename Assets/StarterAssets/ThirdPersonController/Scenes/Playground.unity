@@ -1087,6 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebd834ac5c90914b84adc9b3528698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 1979968432}
 --- !u!137 &2123556611 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5597113867290821413, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
