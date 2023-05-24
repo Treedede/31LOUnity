@@ -5,7 +5,7 @@ using UnityEngine;
 public class RendererDisablerComponent : MonoBehaviour
 {
     public Renderer rendererToDisable;
-
+    public float reenableDelay = 5.0f;
     void Start()
     {
         if (rendererToDisable == null)
@@ -20,15 +20,23 @@ public class RendererDisablerComponent : MonoBehaviour
         if (other.CompareTag("Player"))
         {   
             rendererToDisable.enabled = false;
+            StartCoroutine((ReenableRenderer()));
         }
     }
 
-    void OnTriggerExit(Collider other)
+
+    IEnumerator ReenableRenderer()
     {
-        Debug.Log("trigger exit");
-        if (other.CompareTag("Player"))
-        {
-            rendererToDisable.enabled = true;
-        }
+        yield return new WaitForSeconds (5.0f);
+        rendererToDisable.enabled = true;
     }
+
+    //void OnTriggerExit(Collider other)
+    //{
+       // Debug.Log("trigger exit");
+        //if (other.CompareTag("Player"))
+        //{
+           // rendererToDisable.enabled = true;
+        //}
+  //  }
 }
